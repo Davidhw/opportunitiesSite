@@ -1,0 +1,17 @@
+{% csrf_token %}
+<h1> {{posting.title}} at {{posting.group}}</h1>
+
+<p>Posted on: {{posting.date}}</p>
+
+<h2>Description:</h2>
+<p>{{posting.description}}</p>
+
+<h2>Hiring Criteria</h2>
+
+<p>{{posting.hiringCriteria}}</p>
+
+<h2>Contact:</h2>
+
+<p>{{posting.email}}</p>
+
+<p>{{posting.phone}}</p>

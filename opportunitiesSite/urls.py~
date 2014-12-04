@@ -1,0 +1,18 @@
+from django.conf.urls import patterns, include, url
+from django.contrib import admin
+from addOpportunity import views
+
+
+urlpatterns = patterns('',
+    # Examples:
+    # url(r'^$', 'opportunitiesSite.views.home', name='home'),
+    # url(r'^blog/', include('blog.urls')),
+# testing, remove next line later
+#    url(r'post/form_upload.html', views.IndexView.as_view()), 
+    url(r'^add/',include('addOpportunity.urls')),
+    url(r'^addOpportunity/',include('addOpportunity.urls')),
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^viewAdded/', views.IndexView.as_view(), name='index'),
+    url(r'^post/form_upload.html$',
+        'addOpportunity.views.add', name = 'post_form_upload'),
+)
