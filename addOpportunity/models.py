@@ -13,8 +13,10 @@ class Posting(models.Model):
         (VOLUNTEER,'Volunteering Opportunity'),
         )
     positionType = models.CharField(max_length=1, choices = TYPE_CHOICES, default = JOB)
-    title = models.CharField(max_length=100)
-    group = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
+    organization = models.CharField(max_length=100)
+    isPaid = models.BooleanField()
+    salary = models.PositiveIntegerField(default = 0)
     email = models.CharField(max_length=100)
     keyWords = models.CharField(max_length=100)
     phone = models.CharField(max_length= 12)
