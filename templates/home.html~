@@ -1,4 +1,0 @@
-{% extends base.html %}
-{% block content %}
-This service allows organizations to post job, internship, and volunteer opportunities for students at the New College of Florida. This is currently an alpha version of the service. As such, the posts are fake and exist only for testing purposes.
-
