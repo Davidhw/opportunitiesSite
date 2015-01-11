@@ -1,3 +1,8 @@
+{% extends "base.html" %}
+
+{% block title %}View Posts{% endblock %}
+
+{% block content %}
 {% if latest_post_list %}
     <ul>
     {% for post in latest_post_list %}
@@ -8,3 +13,4 @@
 {% else %}
     <p>No opportunities posted yet.</p>
 {% endif %}
+{% endblock %}

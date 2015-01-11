@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% csrf_token %}
+
+<html lang="en">
+<head>
+    <title>{% block title %}Jobs, Volunteer Opportunities, Internships{% endblock %}</title>
+</head>
+
+<body>
+  {% block nav %}
+  <div id="nav">
+    <TABLE BORDER="0">
+      <TR>
+	<TD>
+	  <form action="{% url 'add' %}">
+	    <input type="submit" value="Post Opportunity">
+	  </form> </TD>
+	<TD>
+	<form action="{% url 'index' %}">
+	    <input type="submit" value="View Posts">
+	  </form> </TD>
+	</TR>
+      </TABLE>
+	  {% endblock %}
+    </div>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

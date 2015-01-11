@@ -1,4 +1,6 @@
-{% csrf_token %}
+{% extends "base.html" %}
+
+{% block content %}
 <h1> {{posting.name}} at {{posting.organization}}</h1>
 
 <p>Posted on: {{posting.date}}</p>
@@ -19,3 +21,5 @@
 <p>{{posting.email}}</p>
 
 <p>{{posting.phone}}</p>
+
+{% endblock %}
