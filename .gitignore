@@ -1,4 +1,10 @@
+.gaedata/
+
+\#*
+
 *.pyc 
+
+*# 
 
 settings.py 
 
@@ -11,3 +17,5 @@ migrations/
 DEADJOE 
 
 media/temp 
+
+staticfiles/
