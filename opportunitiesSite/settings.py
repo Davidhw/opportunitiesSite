@@ -4,6 +4,7 @@
 # If you want to use a different backend you have to remove all occurences
 # of "djangoappengine" from this file.
 from djangoappengine.settings_base import *
+<<<<<<< HEAD
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -13,6 +14,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 RECAPTCHA_PUBLIC_KEY = "6LdIeQETAAAAAOmNfNbGkpm6EdWw8yztpxmL1xsI"
 RECAPTCHA_PRIVATE_KEY = os.environ.get('RECAPTCHA_PRIVATE_KEY')
 
+=======
+
+#merged in
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+>>>>>>> b0fd954da9fee868e2cb2de10b80cc239230b13a
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -141,7 +150,10 @@ INSTALLED_APPS = (
 
     # djangoappengine should come last, so it can override a few manage.py commands
     'djangoappengine',
+<<<<<<< HEAD
     'captcha',
+=======
+>>>>>>> b0fd954da9fee868e2cb2de10b80cc239230b13a
 )
 
 # A sample logging configuration. The only tangible logging
