@@ -1,7 +1,6 @@
 from django.db import models
 from datetime import datetime
 from django.forms import ModelForm
-#from captcha.fields import ReCaptchaField
 
 class Posting(models.Model):
     # choices pattern from https://docs.djangoproject.com/en/dev/ref/models/fields/
@@ -24,8 +23,6 @@ class Posting(models.Model):
     date = models.DateTimeField(default=datetime.now, blank=True)
     description = models.TextField(max_length=500)
     hiringCriteria = models.TextField(max_length=500)
-#    captcha = ReCaptchaField()
-
 
 
 def post_form_upload(request):
