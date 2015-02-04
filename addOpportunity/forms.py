@@ -2,11 +2,15 @@ from addOpportunity import models
 from django.forms import ModelForm
 from django.forms import CharField
 from django.forms import Textarea
+from captcha.fields import ReCaptchaField
+
 class PostModelForm(ModelForm):
+    captcha = ReCaptchaField()
     class Meta:
         model = models.Posting
         exclude = ['date']
         description = CharField(widget=Textarea(attrs={'size': '4000','rows':5}))
+
         
 def post_form_upload(request):
     if request.method == 'GET':

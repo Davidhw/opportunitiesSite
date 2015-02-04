@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from addOpportunity import views as views2
+import captcha
 import views
 
 urlpatterns = patterns('',
