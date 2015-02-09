@@ -25,7 +25,7 @@ DATABASES['default'] = {'ENGINE': 'dbindexer', 'TARGET': DATABASES['default']}
 AUTOLOAD_SITECONF = 'indexes'
 
 #merged in
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
@@ -42,7 +42,7 @@ TIME_ZONE = 'EST'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
 
-SITE_ID = 1
+#SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -88,6 +88,7 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
+SITE_ID = "5715999101812736L"
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '&q192e6guf78+&m0ik)4_4!nuri+=1o9u*cb$5i$9%-w3l)tlu'
 #merged in
@@ -126,13 +127,13 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
+#    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
      'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+     'django.contrib.admindocs',
     'djangotoolbox',
     'autoload',
     'dbindexer',

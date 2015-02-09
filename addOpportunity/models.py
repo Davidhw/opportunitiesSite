@@ -3,6 +3,8 @@ from datetime import datetime
 from django.forms import ModelForm
 
 class Posting(models.Model):
+    def __unicode__(self):
+        return self.name + " at "+ self.organization
     # choices pattern from https://docs.djangoproject.com/en/dev/ref/models/fields/
     VOLUNTEER = "V"
     INTERNSHIP = "I"
@@ -23,6 +25,7 @@ class Posting(models.Model):
     date = models.DateTimeField(default=datetime.now, blank=True)
     description = models.TextField(max_length=500)
     hiringCriteria = models.TextField(max_length=500)
+    visible = models.BooleanField(default = False)
 
 
 def post_form_upload(request):

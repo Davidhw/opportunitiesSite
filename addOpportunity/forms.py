@@ -8,7 +8,7 @@ class PostModelForm(ModelForm):
     captcha = ReCaptchaField()
     class Meta:
         model = models.Posting
-        exclude = ['date']
+        exclude = ['date','visible']
         description = CharField(widget=Textarea(attrs={'size': '4000','rows':5}))
 
         

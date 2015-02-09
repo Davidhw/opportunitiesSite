@@ -2,6 +2,7 @@
 
 
 {% block content %}
+Note that your post will not be visible until it has been approved. <br> <br>
 
 <form action='/add/' method='post'>{% csrf_token %}
 {{ form.as_p }}

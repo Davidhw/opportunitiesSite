@@ -3,6 +3,9 @@ from django.contrib import admin
 from addOpportunity import views as views2
 import captcha
 import views
+from django.contrib import admin
+
+admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
