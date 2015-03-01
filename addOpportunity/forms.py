@@ -3,9 +3,46 @@ from django.forms import ModelForm
 from django.forms import CharField
 from django.forms import Textarea
 from captcha.fields import ReCaptchaField
+import django_filters
+from models import Posting
+
+class PostFilter(django_filters.FilterSet):
+    JOB_FILTER_CHOICES = (
+            ('', 'Any'),
+            (Posting.JOB, 'Job'),
+            (Posting.INTERNSHIP, 'Internship'),
+            (Posting.VOLUNTEER, 'Volunteering Opportunity'),
+            )
+
+    PAID_FILTER_CHOICES = (
+            ('', 'Any Payment Type'),
+            (Posting.UNPAID, 'Unpaid'),
+            (Posting.STIPEND, 'Stipend'),
+            (Posting.HOURLY, 'Hourly'),
+            (Posting.YEARLY, 'Yearly'),
+            )
+
+
+    position_Type = django_filters.ChoiceFilter(choices=JOB_FILTER_CHOICES)
+    payment_Type = django_filters.ChoiceFilter(choices=PAID_FILTER_CHOICES)
+    
+    class Meta:
+
+        model = Posting
+#        fields = ['positionType']
+#        fields = ['positionType','isPaid','name','keyWords']
+        '''        fields = {
+#            'positionType':[], 'isPaid':[],
+                  'name':['startswith'],
+                  'organization':['exact']
+                  'keyWords':['exact'],
+                  }
+                  '''
+        fields = ['position_Type','payment_Type','name','organization','key_Words']
+        strict = False
 
 class PostModelForm(ModelForm):
-    captcha = ReCaptchaField()
+    captcha = ReCaptchaField(use_ssl=True)
     class Meta:
         model = models.Posting
         exclude = ['date','visible']

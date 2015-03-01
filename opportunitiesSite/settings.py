@@ -143,6 +143,8 @@ INSTALLED_APPS = (
     # djangoappengine should come last, so it can override a few manage.py commands
     'djangoappengine',
     'captcha',
+    'django_filters',
+#    'django_extensions',
 )
 
 # A sample logging configuration. The only tangible logging

@@ -3,9 +3,13 @@
 {% block title %}View Posts{% endblock %}
 
 {% block content %}
-{% if latest_post_list %}
+    <form action="" method="get">
+        {{ filter.form.as_p }}
+        <input type="submit" />
+    </form>
+{% if filter %}
     <ul>
-    {% for post in latest_post_list %}
+    {% for post in filter %}
     {% if post.visible %}
     <li> <a href = "{{post.id}}"/> {{ post.name }} at {{post.organization}} </li>
     {% endif %}

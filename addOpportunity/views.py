@@ -1,12 +1,18 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, render_to_response
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.views import generic
 from addOpportunity.models import Posting
 from django.template import RequestContext
 from django.forms.models import model_to_dict
-from addOpportunity.forms import PostModelForm
+from addOpportunity.forms import PostModelForm, PostFilter
 
+
+def post_list(request):
+    f = PostFilter(request.GET,queryset = Posting.objects.filter(visible=True).order_by('-date'))
+    return render_to_response('addOpportunity/index.html', {'filter': f})
+
+'''
 class IndexView(generic.ListView):
     template_name = 'addOpportunity/index.html'
     context_object_name = 'latest_post_list'
@@ -14,7 +20,7 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         """Return published posts in reverse chronological order."""
         return Posting.objects.order_by('-date')
-
+'''
 
 class DetailView(generic.DetailView):
     model = Posting

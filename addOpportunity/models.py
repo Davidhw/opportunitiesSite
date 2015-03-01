@@ -14,19 +14,32 @@ class Posting(models.Model):
         (INTERNSHIP,'Internship'),
         (VOLUNTEER,'Volunteering Opportunity'),
         )
-    positionType = models.CharField(max_length=1, choices = TYPE_CHOICES, default = JOB)
+    
+    UNPAID = "u"
+    STIPEND = "s"
+    HOURLY = "h"
+    YEARLY = "y"
+    PAYMENT_TYPE_CHOICES = ( 
+        (UNPAID,"unpaid"),
+        (STIPEND,"stipend"),
+        (HOURLY,'hourly'),
+        (YEARLY,'yearly'),
+        )
+
+    position_Type = models.CharField(max_length=1, choices = TYPE_CHOICES, default = JOB)
     name = models.CharField(max_length=100)
     organization = models.CharField(max_length=100)
-    isPaid = models.BooleanField()
+#    isPaid = models.BooleanField()
     salary = models.PositiveIntegerField(default = 0)
+    payment_Type = models.CharField(max_length=1, choices = PAYMENT_TYPE_CHOICES, default = UNPAID)
+
     email = models.CharField(max_length=100)
-    keyWords = models.CharField(max_length=100)
+    key_Words = models.CharField(max_length=100)
     phone = models.CharField(max_length= 12)
     date = models.DateTimeField(default=datetime.now, blank=True)
     description = models.TextField(max_length=500)
-    hiringCriteria = models.TextField(max_length=500)
+    hiring_Criteria = models.TextField(max_length=500)
     visible = models.BooleanField(default = False)
-
 
 def post_form_upload(request):
     print "in post form upload!"

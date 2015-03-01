@@ -27,3 +27,6 @@ handlers:
 
 - url: /.*
   script: djangoappengine.main.application
+
+env_variables:
+  RECAPTCHA_PRIVATE_KEY: '6LdIeQETAAAAAPAYtkGet_z8_ERAI6Ne_CmEQigb'
